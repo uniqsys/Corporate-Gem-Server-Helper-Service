@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem "sinatra"
 gem "rake"
 gem "yajl-ruby"
+gem "escape"
 
 group :development do
   gem "shotgun"
