@@ -11,7 +11,7 @@ describe 'Gem server service app' do
   end
   
   def post_gem_file(file_base_name)
-    post 'gems/new', 'file' => Rack::Test::UploadedFile.new("spec/fixtures/#{file_base_name}", "application/binary")
+    post 'api/gems/new', 'file' => Rack::Test::UploadedFile.new("spec/fixtures/#{file_base_name}", "application/binary")
 
     last_response.should be_ok
     last_response.content_type.should == 'application/json;charset=utf-8'

@@ -19,6 +19,8 @@ GEM
     rack (1.3.5)
     rack-protection (1.1.4)
       rack
+    rack-reverse-proxy (0.4.1)
+      rack (>= 1.0.0)
     rack-test (0.6.1)
       rack (>= 1.0)
     rake (0.9.2.2)
@@ -53,6 +55,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   escape
+  rack-reverse-proxy
   rack-test
   rake
   rspec
