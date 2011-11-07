@@ -1,5 +1,11 @@
 require 'escape'
 
+RVM_PATH="/usr/local/rvm/environments"
+RUBY_VERSION="ree-1.8.7-2011.03"
+
+# RVM_PATH="/Users/sky/.rvm"
+# RUBY_VERSION="ruby-1.9.2-p290"
+
 class GemManager
   class << self
     def install(gem_file_name)
@@ -23,8 +29,8 @@ class GemManager
     end
     
     def empty!
-      system "source ~/.rvm/environments/ruby-1.9.2-p290@gemserver && rvm --force gemset delete gemserver"
-      system "rvm --create 1.9.2@gemserver"
+      system "source #{RVM_PATH}/environments/#{RUBY_VERSION}@gemserver && rvm --force gemset delete gemserver"
+      system "rvm --create #{RUBY_VERSION}@gemserver"
     end
     
   private
@@ -35,7 +41,7 @@ class GemManager
     end
   
     def gem(*args)
-      "bash -l -c " + Escape.shell_single_word("source ~/.rvm/environments/ruby-1.9.2-p290@gemserver && " + Escape.shell_command(["gem", *args]) + " 2>/dev/null").to_s
+      "env - bash -c " + Escape.shell_single_word("source #{RVM_PATH}/environments/#{RUBY_VERSION}@gemserver && " + Escape.shell_command(["gem", *args]) + " 2>/dev/null").to_s
     end
     
   end  
