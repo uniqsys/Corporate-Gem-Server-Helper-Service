@@ -1,6 +1,6 @@
 require 'escape'
 
-RVM_PATH="/usr/local/rvm/environments"
+RVM_PATH="/usr/local/rvm"
 RUBY_VERSION="ree-1.8.7-2011.03"
 
 # RVM_PATH="/Users/sky/.rvm"
