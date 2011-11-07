@@ -36,8 +36,7 @@ class GemManager
   private
   
     def gem_response(*args)
-      lines = `#{gem(*args)}`
-      lines.split("\n")[1,256].join("\n")
+      `#{gem(*args)}`
     end
   
     def gem(*args)
