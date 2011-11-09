@@ -40,7 +40,7 @@ class GemManager
     end
   
     def gem(*args)
-      "env - bash -c " + Escape.shell_single_word("source #{RVM_PATH}/environments/#{RUBY_VERSION}@gemserver && " + Escape.shell_command(["gem", *args]) + " 2>/dev/null").to_s
+      "env - RUBYOPT=-Ku bash -c " + Escape.shell_single_word("source #{RVM_PATH}/environments/#{RUBY_VERSION}@gemserver && " + Escape.shell_command(["gem", *args]) + " 2>/dev/null").to_s
     end
     
   end  
